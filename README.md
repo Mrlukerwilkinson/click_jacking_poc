@@ -47,7 +47,7 @@ The provided example does not contain harmful software. Instead, it uses a legit
 **File Verification**:
 To confirm the file's integrity and authenticity, here is the hash of the 7-Zip executable used:
 
-**SHA-256**: 3E74271C7CE48FA84C974D1DA94E03736224B1E1E321502E149925F59B257AD1
+**SHA-256**: 67CB9D3452C9DD974B04F4A5FD842DBCBA8184F2344FF72E3662D7CDB68B099B
 
 Verify this hash before running the file to ensure it has not been tampered with.
 
