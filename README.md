@@ -14,8 +14,8 @@ Pastejacking is being used to spread malware like Lumma Stealer, an info-stealer
 ### How This PoC Works
 This demo shows how pastejacking can:
 
-- Trick users into copying a malicious PowerShell command by simply clicking on a website verify prompt
-- Execute the command in a hidden window, that downloads and runs a payload (a zip file containing 7Zip in this case)
+- Trick users into copying a malicious PowerShell command by simply clicking on a website verify prompt.
+- Execute the command in a hidden window, that downloads and runs a payload (a zip file containing 7Zip in this case).
 - Extract and execute the payload automatically.
 
 ### The Multi-Stage Attack Chain
@@ -36,20 +36,25 @@ Here’s what to do:
 You’ll see the malicious command that would have been executed if pasted into a terminal or Run dialog. This demonstrates how threat actors trick users into unknowingly running harmful code.
 
 ## Important Disclaimer ⚠️
-Before you proceed, please read the following carefully:
+**Before you proceed, please read the following carefully**:
 
-- **Educational Use Only**:
+**Educational Use Only**:
 This PoC is for educational purposes and ethical testing in a controlled environment. Do not use this for malicious activities—it’s illegal and unethical.
 
-- **Non-Malicious Executable**:
+**Non-Malicious Executable**:
 The provided example does not contain harmful software. Instead, it uses a legitimate and clean version of 7-Zip as the executable. This ensures the demonstration is safe to explore without risking your system.
 
-- **File Verification**:
+**File Verification**:
 To confirm the file's integrity and authenticity, here is the hash of the 7-Zip executable used:
 
 **SHA-256**: 3E74271C7CE48FA84C974D1DA94E03736224B1E1E321502E149925F59B257AD1
+
 Verify this hash before running the file to ensure it has not been tampered with.
 
-- **Do Not Run Commands**:
-Avoid pasting the generated command into a terminal or Run dialog unless you understand exactly what it does. Instead, view the pasted content in a text editor like Notepad for safe testing.
+**"Unknown Program" Prompt**:
+If you choose to run the pasted command, you may see a Windows prompt asking you to confirm installation of an unknown program. This is because the executable was renamed to setup.exe and lacks a digital signature. Windows flags unsigned or renamed files as "unknown."
+While this PoC uses a legitimate executable, this demonstrates how attackers might disguise malicious software.
+
+**Do Not Run Commands**:
+Avoid pasting the generated command into a terminal or Run dialog unless you fully understand its purpose. Instead, view the pasted content in a text editor like Notepad to safely examine the attack mechanics.
 
